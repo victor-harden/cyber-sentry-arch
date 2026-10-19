@@ -1,26 +1,51 @@
+<div align="center">
+
 # 🛡️ Cyber Sentry Arch
 
-Correlates live security data against the packages actually installed on your Arch Linux machine.
+**Local vulnerability correlation for Arch Linux**
 
-Answers the question: **Does this CVE affect my system?**
+</div>
 
-## Data sources
+---
 
-- Arch Security Tracker
+## The Problem
+
+Reading a CVE headline and wondering:  
+*“Does this actually affect my machine?”*
+
+Most tools either:
+- Show global noise, or
+- Require complex infrastructure
+
+## The Solution
+
+**Cyber Sentry Arch** correlates live security intelligence against the packages **actually installed** on your system (`pacman -Q`).
+
+### Data Sources
+
+- Arch Linux Security Tracker
 - CISA Known Exploited Vulnerabilities (KEV)
-- NVD (optional)
+- (Extensible to NVD / EPSS)
 
-## Usage
+## Current Status
 
-```bash
-python cyber_sentry.py
-```
+This repository currently contains a solid foundation and architecture.  
+The core scanning engine is being expanded.
 
-## Requirements
+## Quick Start
 
 ```bash
 pip install requests
+python cyber_sentry.py
 ```
+
+## Roadmap
+
+- [x] Package inventory
+- [ ] Arch Security Tracker integration
+- [ ] CISA KEV correlation
+- [ ] Severity scoring
+- [ ] Terminal + optional waybar module
 
 ## License
 
